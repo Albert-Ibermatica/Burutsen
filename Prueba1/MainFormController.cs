@@ -280,7 +280,9 @@ namespace Prueba1
         {
             try
             {
-                string filename = "run_bitbrain_api.bat";
+                System.Diagnostics.Process.Start("run_bitbrain_api.bat");
+
+                string filename = @"run_bitbrain_api.bat";
                 string parameters = $"/k \"{filename}\"";
 
                 ProcessStartInfo startInfo = new ProcessStartInfo("cmd.exe");
@@ -290,9 +292,28 @@ namespace Prueba1
 
                 startInfo.Arguments = parameters;
 
-               var websocket_process =  Process.Start(startInfo);
-               this.ws_pid = StoreProcess(websocket_process);
-                
+                var websocket_process = Process.Start(startInfo);
+                this.ws_pid = StoreProcess(websocket_process);
+
+
+                //Process proc = null;
+                //try
+                //{
+                //    string batDir = string.Format(@"..\..\run_bitbrain_api.bat");
+                //    proc = new Process();
+                //    proc.StartInfo.WorkingDirectory = batDir;
+                //    proc.StartInfo.FileName = "run_bitbrain_api.bat";
+                //    proc.StartInfo.CreateNoWindow = false;
+                //    proc.Start();
+                //    proc.WaitForExit();
+                //    MessageBox.Show("Bat file executed !!");
+
+                //}
+                //catch (Exception ex)
+                //{
+                //    Console.WriteLine(ex.StackTrace.ToString());
+                //}
+
 
             }
             catch (Exception e)

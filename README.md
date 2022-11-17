@@ -9,5 +9,9 @@ Reconocimiento de gustos a traves de deep learning y analisis de los impulsos el
  
  pip install -r requirements.txt
  
- 
+ # Cambiar la variable CONDAPATH del script run_bitbrain_api.bat que lanza el flask 
+
+CONDAPATH=C:\Users\your_username\Miniconda3
+
+
 
