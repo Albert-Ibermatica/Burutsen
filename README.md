@@ -13,5 +13,5 @@ Reconocimiento de gustos a traves de deep learning y analisis de los impulsos el
 
 CONDAPATH=C:\Users\your_username\Miniconda3
 
-
+# Instalar las herramientas de visual studio
 
