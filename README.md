@@ -14,4 +14,7 @@ Reconocimiento de gustos a traves de deep learning y analisis de los impulsos el
 CONDAPATH=C:\Users\your_username\Miniconda3
 
 # Instalar las herramientas de visual studio
+herramientas de .net framework con el vs installer
 
+# Instalamos bitbrain viewer
+bbtviewer-1.7 windows.exe es el instalador del programa para ver las señales EGG que esta recibiendo la diadema.
