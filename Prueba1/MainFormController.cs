@@ -282,7 +282,7 @@ namespace Prueba1
         {
             try
             {
-                System.Diagnostics.Process.Start("run_bitbrain_api.bat");
+               
 
                 string filename = @"run_bitbrain_api.bat";
                 string parameters = $"/k \"{filename}\"";
@@ -290,14 +290,10 @@ namespace Prueba1
                 ProcessStartInfo startInfo = new ProcessStartInfo("cmd.exe");
 
                 startInfo.WindowStyle = ProcessWindowStyle.Minimized;
-
-
                 startInfo.Arguments = parameters;
 
                 var websocket_process = Process.Start(startInfo);
-                this.ws_pid = StoreProcess(websocket_process);
-
-
+                //this.ws_pid = StoreProcess(websocket_process);
                 //Process proc = null;
                 //try
                 //{
