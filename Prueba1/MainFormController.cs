@@ -46,6 +46,7 @@ namespace Prueba1
 
             form.Show();
 
+            form.link_manual.Click += new EventHandler(ver_manual);
             form.btn_iniciar_prediccion.Click += new EventHandler(btn_info_onclickAsync);
             form.btn_historial.Click += Btn_historial_ClickAsync;
             form.icono_informacion.Click += new EventHandler(Icono_informacion_Click);
@@ -58,6 +59,7 @@ namespace Prueba1
 
         }
 
+    
         public async void Btn_historial_ClickAsync(object sender, EventArgs e)
         {
             // abrimos con notepad el archivo .txt donde esta el historial de predicciones
@@ -411,6 +413,18 @@ namespace Prueba1
             // Couldn't find our process!!!
             throw new Exception("Process not found!");
         }
+
+        public void ver_manual(object sender, EventArgs e)
+        {
+            Path.GetTempPath();
+
+            Console.WriteLine(System.AppDomain.CurrentDomain.BaseDirectory);
+            
+            //"C:\Users\Showroom3\Desktop\BuruTsen\Documentacion-Burutsen.pdf"
+            string filename = "Documentacion-Burutsen.pdf";
+            System.Diagnostics.Process.Start(filename);
+        }
+
 
     }
 }

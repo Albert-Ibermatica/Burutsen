@@ -42,6 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label_estado = new System.Windows.Forms.Label();
             this.icono_reiniciar = new System.Windows.Forms.PictureBox();
+            this.link_manual = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.logo_ibermatica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.icono_informacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagen_resultado)).BeginInit();
@@ -208,6 +209,18 @@
             this.icono_reiniciar.TabIndex = 10;
             this.icono_reiniciar.TabStop = false;
             // 
+            // link_manual
+            // 
+            this.link_manual.AutoSize = true;
+            this.link_manual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.link_manual.LinkColor = System.Drawing.Color.White;
+            this.link_manual.Location = new System.Drawing.Point(60, 687);
+            this.link_manual.Name = "link_manual";
+            this.link_manual.Size = new System.Drawing.Size(90, 20);
+            this.link_manual.TabIndex = 17;
+            this.link_manual.TabStop = true;
+            this.link_manual.Text = "Ver manual";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -215,6 +228,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(184)))));
             this.ClientSize = new System.Drawing.Size(1199, 728);
+            this.Controls.Add(this.link_manual);
             this.Controls.Add(this.barra_superior);
             this.Controls.Add(this.imagen_resultado);
             this.Controls.Add(this.icono_informacion);
@@ -256,6 +270,7 @@
         public System.Windows.Forms.PictureBox icono_reiniciar;
         public System.Windows.Forms.Label label_fecha;
         public System.Windows.Forms.Label label_estado;
+        public System.Windows.Forms.LinkLabel link_manual;
     }
 }
 
