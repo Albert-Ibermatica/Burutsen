@@ -416,11 +416,6 @@ namespace Prueba1
 
         public void ver_manual(object sender, EventArgs e)
         {
-            Path.GetTempPath();
-
-            Console.WriteLine(System.AppDomain.CurrentDomain.BaseDirectory);
-            
-            //"C:\Users\Showroom3\Desktop\BuruTsen\Documentacion-Burutsen.pdf"
             string filename = "Documentacion-Burutsen.pdf";
             System.Diagnostics.Process.Start(filename);
         }
