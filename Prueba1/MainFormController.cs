@@ -163,20 +163,40 @@ namespace Prueba1
 
             websocket.On("msg", response =>
             {
-                // Console.WriteLine(response);
-                String responseText = response.GetValue<String>();
+                Console.WriteLine(response);
+                String responseText = response.GetValue().ToString();
                 Console.WriteLine(responseText);
+
+                if (responseText== "Iniciando grabacion de datos ...")
+                {
+                    // empezamos el evento de cargar del raton 
+                    form.UseWaitCursor = true;
+
+                }
+
                 if (form.log_aplicacion.InvokeRequired)
                 {
                     form.log_aplicacion.Invoke(new Action(() =>
 
                     form.log_aplicacion.Text += responseText + "\n"
+
                     ));
                 }
                 else
                 {
                     form.log_aplicacion.Text = responseText;
                 }
+
+
+            });
+
+            websocket.On("table_data", response =>
+            {
+                Console.WriteLine(response);
+                String responseText = response.GetValue().ToString();
+                Console.WriteLine(responseText);
+                guardar_datos(responseText);
+             
 
 
             });
@@ -189,8 +209,12 @@ namespace Prueba1
                 var websocket_response = response.GetValue();
                 Console.WriteLine(websocket_response);
 
+                // paramos el loading cursor
+                form.UseWaitCursor = false;
+
+
                 // caramelo
-                if (websocket_response.ToString() == "0")
+                if (websocket_response.ToString() == "0.0")
                 {
                     if (form.imagen_resultado.InvokeRequired)
                     {
@@ -209,7 +233,7 @@ namespace Prueba1
                 }
 
                 // cacahuete
-                if (websocket_response.ToString() == "1")
+                if (websocket_response.ToString() == "1.0")
                 {
                     if (form.imagen_resultado.InvokeRequired)
                     {
@@ -357,6 +381,33 @@ namespace Prueba1
             var hora_string = hora.ToString();
 
             String registro_prediccion = "Resultado: " + resultado + "  Fecha y hora: " + hora_string + " Modelo: Circe 1.1.2 - Tensorflow - Keras API" + Environment.NewLine;
+
+
+            // This text is always added, making the file longer over time
+            // if it is not deleted.
+            using (StreamWriter sw = File.AppendText(path))
+            {
+                sw.WriteLine(registro_prediccion);
+            }
+            // leemos el archivo de texto.
+            using (StreamReader sr = File.OpenText(path))
+            {
+                string s = "";
+                while ((s = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(s);
+                }
+            }
+        }
+        public void guardar_datos(string tabla)
+        {
+            //File.path("C:\\Users\\iberm\\Desktop\\BuruTsen\\Prueba1\\historial.txt");
+            // C:\\Users\\iberm\\Desktop\\BuruTsen\\Prueba1\\historial.txt
+            string path = @"..\\..\\historial.txt";
+
+            
+
+            String registro_prediccion = tabla;
 
 
             // This text is always added, making the file longer over time

@@ -1,5 +1,5 @@
 import sys
-
+import pandas as pd
 from flask import Flask
 from flask_socketio import SocketIO
 
@@ -47,7 +47,7 @@ def startPrediction():
     device = Device.create_bluetooth_device(name)
     length = int(sys.argv[2]) if len(sys.argv) > 2 else 10
     with Device.create_bluetooth_device(name) as device:
-        if not record_to_csv.try_to(device.is_connected, device.connect, 10, socketio,
+        if not record_to_csv.try_to(device.is_connected, device.connect, 10,socketio,
                                     "Conectando a la diadema: {}".format(name)):
             
             socketio.emit("msg", "No se ha podido conectar con la diadema: {}".format(name))
@@ -61,17 +61,23 @@ def startPrediction():
         record_to_csv.config_signals(device)
         socketio.emit("msg", "Iniciando grabacion de datos ...")
         eeg = record_to_csv.record_data(device, length)
-        result = record_to_csv.call_model(eeg=eeg, feats_folder='models/feats01/',
-                                          model_folder='models/model01')
-        print('Inference result: {}'.format(result.loc[0, 'Target']))
-        socketio.emit("msg", 'Inference result: {}'.format(result.loc[0, 'Target']))
-        socketio.emit("msg", result.loc[0, 'Target'])
-        socketio.emit("result", result.loc[0, 'Target'])
-        print(result.loc[0, 'Target'])
-        if not record_to_csv.try_to(lambda: not device.is_connected(), device.disconnect, 10):
+        result = record_to_csv.call_model(eeg=eeg, feats_folder='C:/Users/Showroom3/Desktop/BuruTsen/Prueba1/bin/Debug/bitbrain-api/models/feats01/',
+                                          model_folder='C:/Users/Showroom3/Desktop/BuruTsen/Prueba1/bin/Debug/bitbrain-api/models/model01/')
+        print("esto es el print ")
+        print(result)
+        result_string= pd.DataFrame.to_string(result)
+        socketio.emit("table_data","-------- tabla de datos ----------")
+        socketio.emit("table_data",result_string)
+        print(result.loc[0, 'm10-svc:poly'])
+        print('Inference result: {}'.format(result.loc[0, 'm10-svc:poly']))
+        socketio.emit("msg", 'Inference result: {}'.format(result.loc[0, 'm10-svc:poly']))
+        socketio.emit("msg", result.loc[0, 'm10-svc:poly'])
+        socketio.emit("result", result.loc[0, 'm10-svc:poly'])
+        print(result.loc[0, 'm10-svc:poly'])
+        if not record_to_csv.try_to(lambda: not device.is_connected(), device.disconnect, 10, socketio):
             print("no es posible desconectar")
             socketio.emit("error", "no es posible desconectar")
-            socketio.emit("msg", result.loc[0, 'Target'])
+            socketio.emit("msg", result.loc[0, 'm10-svc:poly'])
             exit(1)
         print("Conectado")
         # No devolvemos nada, las posibilidades estan cubiertas con los msg del socketio. 

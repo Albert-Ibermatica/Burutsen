@@ -18,6 +18,9 @@ import numpy as np
 import pandas as pd
 from bbt import Signal, Device, SensorType, ImpedanceLevel
 from circe.classification.methods import ClassContext
+
+
+
 # %% SETTING PARAMETERS
 # We define the parameters for this script execution.
 # _____________________________________________________________________________
@@ -28,6 +31,7 @@ model_path = 'models/'
 # %% CUSTOM SDK
 # Custom BitBrain SDK for EEG data processing in streaming.
 # _____________________________________________________________________________
+
 def try_to(condition, action, tries, socket,message=None):
     t = 0
     while (not condition() and t < tries):
@@ -54,7 +58,6 @@ def csv_filename(signal_number, signal_type):
 def record_one(device):
     sequence, battery, flags, signals = device.read()
     ts = time.time_ns()
-    #print(len(signals))
     data_streaming = pd.DataFrame(columns=['ts', 'EEG-ch1', 'EEG-ch2', 'EEG-ch3',
                                            'EEG-ch4', 'EEG-ch5', 'EEG-ch6', 'EEG-ch7',
                                            'EEG-ch8'])
@@ -119,7 +122,6 @@ def record_data(device, length):
                                         'fir_design': 'firwin2',
                                         'phase': 'zero-double'},
                            scaling=1e-6)
-         
         device.stop()
     print("Stopped: ", not device.is_running())
     return eeg
@@ -127,9 +129,8 @@ def record_data(device, length):
 
 def call_model(eeg, feats_folder, model_folder):
     result = eeg.normalize() \
-        .select_k_feats(load_folder=feats_folder) \
-        .load_apply(folder=model_folder, dec=0)
-
+                .select_k_feats(load_folder=feats_folder) \
+                .load_apply(folder=model_folder)
     return result
 
 # __init__.py

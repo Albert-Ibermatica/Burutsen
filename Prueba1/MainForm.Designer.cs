@@ -72,10 +72,10 @@
             this.log_aplicacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.log_aplicacion.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.log_aplicacion.ForeColor = System.Drawing.Color.White;
-            this.log_aplicacion.Location = new System.Drawing.Point(330, 477);
+            this.log_aplicacion.Location = new System.Drawing.Point(330, 475);
             this.log_aplicacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.log_aplicacion.Name = "log_aplicacion";
-            this.log_aplicacion.Size = new System.Drawing.Size(559, 96);
+            this.log_aplicacion.Size = new System.Drawing.Size(559, 98);
             this.log_aplicacion.TabIndex = 3;
             this.log_aplicacion.Text = "";
             // 
@@ -143,7 +143,7 @@
             // imagen_resultado
             // 
             this.imagen_resultado.Image = ((System.Drawing.Image)(resources.GetObject("imagen_resultado.Image")));
-            this.imagen_resultado.Location = new System.Drawing.Point(474, 272);
+            this.imagen_resultado.Location = new System.Drawing.Point(475, 243);
             this.imagen_resultado.Name = "imagen_resultado";
             this.imagen_resultado.Size = new System.Drawing.Size(244, 184);
             this.imagen_resultado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
