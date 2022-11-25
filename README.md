@@ -3,7 +3,7 @@ Reconocimiento de gustos a traves de deep learning y analisis de los impulsos el
 
 # Instalacion del entorno conda
 
- conda create --name bitbrain --python=3.10
+ conda create --name bitbrain python=3.10
  
  conda activate bitbrain
  
