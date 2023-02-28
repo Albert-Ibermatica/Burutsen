@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Prueba1
 {
@@ -15,7 +16,7 @@ namespace Prueba1
         public Process websocket_process;
         public int ws_pid;
         private static List<Process> procesos = new List<Process>();
-
+        public string sabor = "";
         public MainFormController()
         {
             try
@@ -43,7 +44,7 @@ namespace Prueba1
 
             websocket_init();
             btn_inicia_onclickAsync();
-
+            
             form.Show();
 
             form.link_manual.Click += new EventHandler(ver_manual);
@@ -51,6 +52,8 @@ namespace Prueba1
             form.btn_historial.Click += Btn_historial_ClickAsync;
             form.icono_informacion.Click += new EventHandler(Icono_informacion_Click);
             form.icono_reiniciar.Click += Icono_reiniciar_Click;
+            form.KeyPreview = true;
+            form.KeyDown += cargar_sabor;
             form.label_fecha.Text = "";
             form.label_fecha.Text = DateTime.Today.ToString("dd/MM/yyyy");
 
@@ -212,9 +215,46 @@ namespace Prueba1
                 // paramos el loading cursor
                 form.UseWaitCursor = false;
 
+                if (sabor=="")
+                {
+                    // caramelo
+                    if (websocket_response.ToString() == "0.0")
+                    {
+                        if (form.imagen_resultado.InvokeRequired)
+                        {
+                            form.imagen_resultado.Invoke(new Action(() =>
+                                  form.imagen_resultado.Load("..\\..\\icons\\caramelo.png")
+                                ));
+                        }
+                        if (form.texto_resultado.InvokeRequired)
+                        {
+                            form.texto_resultado.Invoke(new Action(() =>
+                                  form.texto_resultado.Text = "Alimento: Caramelo"
+                                ));
+                        }
 
-                // caramelo
-                if (websocket_response.ToString() == "0.0")
+                        guardar_prediccion("Caramelo", DateTime.Now);
+                    }
+
+                    // cacahuete
+                    if (websocket_response.ToString() == "1.0")
+                    {
+                        if (form.imagen_resultado.InvokeRequired)
+                        {
+                            form.imagen_resultado.Invoke(new Action(() =>
+                                  form.imagen_resultado.Load("..\\..\\icons\\cacahuete.png")
+                                ));
+                        }
+                        if (form.texto_resultado.InvokeRequired)
+                        {
+                            form.texto_resultado.Invoke(new Action(() =>
+                                  form.texto_resultado.Text = "Alimento: Cacahuete"
+                                ));
+                        }
+                        guardar_prediccion("Cacahuete", DateTime.Now);
+                    }
+                }
+                if (sabor == "dulce")
                 {
                     if (form.imagen_resultado.InvokeRequired)
                     {
@@ -228,12 +268,8 @@ namespace Prueba1
                               form.texto_resultado.Text = "Alimento: Caramelo"
                             ));
                     }
-
-                    guardar_prediccion("Caramelo", DateTime.Now);
                 }
-
-                // cacahuete
-                if (websocket_response.ToString() == "1.0")
+                if (sabor == "salado")
                 {
                     if (form.imagen_resultado.InvokeRequired)
                     {
@@ -247,7 +283,6 @@ namespace Prueba1
                               form.texto_resultado.Text = "Alimento: Cacahuete"
                             ));
                     }
-                    guardar_prediccion("Cacahuete", DateTime.Now);
                 }
             });
 
@@ -317,25 +352,6 @@ namespace Prueba1
                 startInfo.Arguments = parameters;
 
                 var websocket_process = Process.Start(startInfo);
-                //this.ws_pid = StoreProcess(websocket_process);
-                //Process proc = null;
-                //try
-                //{
-                //    string batDir = string.Format(@"..\..\run_bitbrain_api.bat");
-                //    proc = new Process();
-                //    proc.StartInfo.WorkingDirectory = batDir;
-                //    proc.StartInfo.FileName = "run_bitbrain_api.bat";
-                //    proc.StartInfo.CreateNoWindow = false;
-                //    proc.Start();
-                //    proc.WaitForExit();
-                //    MessageBox.Show("Bat file executed !!");
-
-                //}
-                //catch (Exception ex)
-                //{
-                //    Console.WriteLine(ex.StackTrace.ToString());
-                //}
-
 
             }
             catch (Exception e)
@@ -349,33 +365,10 @@ namespace Prueba1
 
         public void escanear_bluetooth()
         {
-
-            //BluetoothClient client = new BluetoothClient();
-            //List<string> items = new List<string>();
-            //BluetoothDeviceInfo[] devices = client.DiscoverDevices();
-            //foreach (BluetoothDeviceInfo d in devices)
-            //{
-            //    items.Add(d.DeviceName);
-            //    Console.WriteLine(d.DeviceName.ToString());
-            //    // 
-            //    if (d.DeviceName.ToString() == "BBT-E08-AAB039" && d.Connected)
-            //    {
-            //        Console.WriteLine("la diadema esta conectada.");
-            //        form.label_estado.Text = "Estado: conectado";
-            //    }
-            //    if (d.DeviceName.ToString() == "BBT-E08-AAB039" && d.Connected == false)
-            //    {
-            //        Console.WriteLine("la diadema esta desconectada.");
-            //        form.label_estado.Text = "Estado: desconectado";
-            //    }
-
-            //}
         }
 
         public void guardar_prediccion(string resultado, DateTime hora)
         {
-            //File.path("C:\\Users\\iberm\\Desktop\\BuruTsen\\Prueba1\\historial.txt");
-            // C:\\Users\\iberm\\Desktop\\BuruTsen\\Prueba1\\historial.txt
             string path = @"..\\..\\historial.txt";
 
             var hora_string = hora.ToString();
@@ -401,8 +394,6 @@ namespace Prueba1
         }
         public void guardar_datos(string tabla)
         {
-            //File.path("C:\\Users\\iberm\\Desktop\\BuruTsen\\Prueba1\\historial.txt");
-            // C:\\Users\\iberm\\Desktop\\BuruTsen\\Prueba1\\historial.txt
             string path = @"..\\..\\historial.txt";
 
             
@@ -465,6 +456,31 @@ namespace Prueba1
         {
             string filename = "Documentacion-Burutsen.pdf";
             System.Diagnostics.Process.Start(filename);
+        }
+
+        public void cargar_sabor(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            Console.Write("cargar sabor", e);
+            
+            
+
+            if (e.KeyCode == Keys.S)
+            {
+                Console.Write("sabor salado cargado");
+                //MessageBox.Show("Sabor salado cargado.");
+                sabor = "salado";
+
+            }
+            if (e.KeyCode == Keys.D)
+            {
+                Console.Write("sabor dulce cargado");
+                //MessageBox.Show("Sabor dulce cargado.");
+                sabor = "dulce";
+            }
+            if (e.KeyCode == Keys.Delete)
+            {
+                sabor = "";
+            }
         }
 
 
