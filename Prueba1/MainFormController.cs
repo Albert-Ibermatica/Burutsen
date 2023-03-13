@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
 namespace Prueba1
 {
@@ -45,6 +46,8 @@ namespace Prueba1
             websocket_init();
             btn_inicia_onclickAsync();
             
+
+
             form.Show();
 
             form.link_manual.Click += new EventHandler(ver_manual);
@@ -52,8 +55,9 @@ namespace Prueba1
             form.btn_historial.Click += Btn_historial_ClickAsync;
             form.icono_informacion.Click += new EventHandler(Icono_informacion_Click);
             form.icono_reiniciar.Click += Icono_reiniciar_Click;
+            form.btn_iniciar_prediccion.MouseDown += button1_MouseDown;
             form.KeyPreview = true;
-            form.KeyDown += cargar_sabor;
+            
             form.label_fecha.Text = "";
             form.label_fecha.Text = DateTime.Today.ToString("dd/MM/yyyy");
 
@@ -62,7 +66,6 @@ namespace Prueba1
 
         }
 
-    
         public async void Btn_historial_ClickAsync(object sender, EventArgs e)
         {
             // abrimos con notepad el archivo .txt donde esta el historial de predicciones
@@ -460,25 +463,51 @@ namespace Prueba1
 
         public void cargar_sabor(object sender, System.Windows.Forms.KeyEventArgs e)
         {
-            Console.Write("cargar sabor", e);
+          
             
             
 
             if (e.KeyCode == Keys.S)
             {
-                Console.Write("sabor salado cargado");
-                //MessageBox.Show("Sabor salado cargado.");
-                sabor = "salado";
 
             }
             if (e.KeyCode == Keys.D)
             {
-                Console.Write("sabor dulce cargado");
-                //MessageBox.Show("Sabor dulce cargado.");
-                sabor = "dulce";
+              
             }
             if (e.KeyCode == Keys.Delete)
             {
+              
+            }
+        }
+
+        public void button1_MouseDown(object sender, MouseEventArgs e)
+        {
+            int buttonWidth = form.btn_iniciar_prediccion.Width; 
+            int clickPosition = e.Location.X;
+
+            Console.Write("cargar sabor", e);
+
+            if (clickPosition <= buttonWidth / 3)
+            {
+                // Acción para la parte izquierda del botón
+                Console.Write("sabor dulce cargado");
+                
+                sabor = "dulce";
+
+            }
+            else if (clickPosition >= buttonWidth * 2 / 3)
+            {
+                // Acción para la parte derecha del botón
+                
+                Console.Write("sabor salado cargado");
+               
+                sabor = "salado";
+            }
+            else
+            {
+                Console.Write("reset cargado");
+                // Acción para la parte central del botón limpiar 
                 sabor = "";
             }
         }

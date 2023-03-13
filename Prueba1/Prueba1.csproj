@@ -158,6 +158,8 @@
     <Content Include="icons\logo-ibermatica.png" />
     <Content Include="icons\manteca-de-cacahuete %281%29.png" />
     <Content Include="icons\manteca-de-cacahuete.png" />
+    <Content Include="icons\mini-cacahuete.png" />
+    <Content Include="icons\mini-candy.png" />
     <Content Include="icons\nada-logo.png" />
     <Content Include="icons\recarga-de-flecha-blanca %281%29.png" />
     <Content Include="icons\recarga-de-flecha-blanca %282%29.png" />
