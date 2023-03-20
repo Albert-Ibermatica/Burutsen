@@ -488,26 +488,25 @@ namespace Prueba1
 
             Console.Write("cargar sabor", e);
 
-            if (clickPosition <= buttonWidth / 3)
+            if (clickPosition <= buttonWidth / 2)
             {
                 // Acción para la parte izquierda del botón
-                Console.Write("sabor dulce cargado");
-                
-                sabor = "dulce";
+                Console.Write("Sabor dulce seleccionado.");
 
+                sabor = "dulce";
             }
-            else if (clickPosition >= buttonWidth * 2 / 3)
+            else if (clickPosition >= buttonWidth / 2 && clickPosition <= buttonWidth)
             {
                 // Acción para la parte derecha del botón
-                
-                Console.Write("sabor salado cargado");
-               
+                Console.Write("Sabor salado seleccionado.");
+
                 sabor = "salado";
             }
             else
             {
-                Console.Write("reset cargado");
-                // Acción para la parte central del botón limpiar 
+                // Acción para la parte central del botón
+                Console.Write("Reset seleccionado.");
+
                 sabor = "";
             }
         }

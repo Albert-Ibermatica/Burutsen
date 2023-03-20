@@ -128,4 +128,46 @@ Una vez la señal limpia se infiere el gusto del alimento a partir de un modelo 
 
 </value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        0QAAANEBqyQtcAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJZSURBVFhHtdY9
+        axRRFMbxNBF8LRTNQnwpFET9DOJH0U4LQXEFKyuxCCQERKzEShsljS+dCqLYpBAVIWIlWNhZqajg+n/c
+        OeuZu8+a3ZnNgV+YOXP3nMzMvTMz0+v1NgTRQdcdy2xyGohlfMV+dzzYZFvEHL5BOytuTLDJtoilqnlY
+        wCE71iXbIPLZl+4PjS8TbRGLqaFTuxK1H7dFzOJz1WiUhdpv8s44iGO4gLv4gFXcwxXM4wAeIzctreDv
+        6rBNHGIbtLR+4QWu4VRF28rp3l+H5sEZaBnmxpmOdW2zEnEYH6EzPo7tOIFzFW0rp2Ma8x7xT5SNRf+o
+        TqZjG2bEVrzDI2yGzvgLyqLKnYTG6BK/wS7k26HGWqJzg/q5mUPcgTbe4lm1/T9q+LzavgnNCU1MrY5B
+        40H9MpER+/AbUXxS37Ebs66+2GQgdH9zwSYuu9rBJgPxJBVq6oGrHWwyEFrjuVgTL13tYJNBP06Fmlpz
+        tYNNBuJpKtTUQ1c72GQgLqZCTZ13tYNNCqEXyx78RC44qSOufhhO9B+hemjo4aGHyG3kgpO4UdYv/dvo
+        N9ZjMn9M6Km2A69Tblxr2JKbOQp9verFMOorRi+UvfiUcuvRY/uoa1hSdLHea/M0dkJX6AfcONGr+io2
+        uWZO/w8fB9AbLBcr6XZoThzEJWhu6Na8wi2cxVhnndV3+l+vuWlJE3Pki6WJ+g4fjFWjURbz+GkYTvDp
+        nBpmmqRD7/O2fLJ/JcrbseTGtmWTgYiJuSFnLzYZCK0OLcNld3wabDIj9JzouGPt9Wb+AOz4LptZsi5D
+        AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        6AAAAOgBhtX2rwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAQQSURBVFhHtZdb
+        yBVVFMdPJF3Uh6Je6kHxjpb4kAUFEhgIomIEZmZYWVJqmZISmrcQ1LxACZomBGkqYZeHLmImIipo4IMI
+        KoZY3rJCVMjIS9jvN2f2cX3bc77D92F/+LFn1szes/asNWvvqdTRUDgMV+F62R6CIfC/6nZYA1dgFwwC
+        HXgSdsNl+Ai875brNvgMjsLnGkotLlu1Gby+rjhrXXeBjo+DaTAMWtVrsBdOQT8NpeaXrXoYTsA+eFVD
+        HfnQLXAedoLOygFoqI7wOxj7XzUERQeUDnjfb3C3hqDnwAk4a8dMugcuwr3FWR05my9hJHynIeidsk36
+        HkbA1zBeA+oKP0JK2kZ4fRt0gRb6AsaAA5oHUXaMWg8vwguQcsWHz4Q7irPG8vos+KE4CzoO3WEKrNQQ
+        lDvg9TegB1wAv4w0Q5WOm2G/ZVDoEhhPvVuoIciboxaBszXGXtPx9qgn/FU9rDrggDPgfQ1BuQNLYTp0
+        BuuFpFk1w4QWj+1XewMpBC/BpxqCvDnKHDDLncExeA/mQlvk/faryQIzFh6CnzUE5Q740L6gEybhRngZ
+        2qKbkv11+ASshmfAzyopOqDd697nm7JKWj/ug7bofjgLjxVnqDekArQB4oyiA3puCNQ5+BMsSu2R/XTi
+        ieIMWTqtVFPhQw2logPa3wRnYFF5GnJZ9ZbDQTC5bT3XnusZ2FM9rFSOQB+wIBnXpOjAJngWXBOuQT6o
+        oXCcb+BR6FS234L2PFRO+O/q4Q0HngfDkBQd0LHR0B+0mwtRviEfrhzrLTC8Sic+qB7WZP/a+Fa1FIJ4
+        Y3RAu9XSEGh3nUgoF6qB8CAY31Vl+wCYcCnPYr9ifL38xQOUf1bRAe0pCbX7FSSUYbHeW6pXa0BucCbD
+        neB1FfsV46fPUDX7DE9XD1vYk5LNt/Rx9bCyFjxXDfukQuQCk+8H8k6+5m7QmgMm3h9gjG0Ni2rYJ5Vi
+        M9ylOSrv5PVR0JoD8Q3YNn0DaTX0xjxT804rwBhrj8kk/4Ib1jwHJoF2cyDvU3PA1XA2LNAQlDvgde/T
+        HpNJzI9e4Ffgls0dtK1fgYl+EvI+xfgpBC7HSzQE5Q6k5djOuVzh0sx9oHVAh5RvYk71sIWK8Y2rBWgi
+        NNsROSu/mnyzqgyjpdWVbgD4Vm0997/CrXquYvxX4Ct4BIZrCModsE7obD0HlE7MA/8f/ilb1/96D1fF
+        +Hrqsvo4vK0hKHdgP/iZmUC3QrXxJ8BP4BJr0iRFByzBrprmS+5Ye1Ubx6JhmbXQGOek+CAXG0u2eeKu
+        ttk2vJksz4apJr9VC4dr/Q4YDDrwFGwH7ZbsDuAPhrvo9jphv3fhpn8EZSKaPBYOHXAH6+96TFDXBTvH
+        /4K2YL+tlUqly39OWkKWNpZHrgAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>
