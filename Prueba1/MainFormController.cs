@@ -463,10 +463,6 @@ namespace Prueba1
 
         public void cargar_sabor(object sender, System.Windows.Forms.KeyEventArgs e)
         {
-          
-            
-            
-
             if (e.KeyCode == Keys.S)
             {
 
