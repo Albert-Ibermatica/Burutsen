@@ -155,6 +155,7 @@
     <Content Include="icons\dos-pequenas-cadenas-conectadas.png" />
     <Content Include="icons\icone-cercle-rempli-vert.png" />
     <Content Include="icons\informacion.png" />
+    <None Include="icons\logo-ayesa.png" />
     <Content Include="icons\logo-ibermatica.png" />
     <Content Include="icons\manteca-de-cacahuete %281%29.png" />
     <Content Include="icons\manteca-de-cacahuete.png" />

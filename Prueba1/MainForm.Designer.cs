@@ -122,9 +122,9 @@
             this.logo_ibermatica.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.logo_ibermatica.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.logo_ibermatica.InitialImage = ((System.Drawing.Image)(resources.GetObject("logo_ibermatica.InitialImage")));
-            this.logo_ibermatica.Location = new System.Drawing.Point(1052, 653);
+            this.logo_ibermatica.Location = new System.Drawing.Point(951, 653);
             this.logo_ibermatica.Name = "logo_ibermatica";
-            this.logo_ibermatica.Size = new System.Drawing.Size(135, 63);
+            this.logo_ibermatica.Size = new System.Drawing.Size(236, 63);
             this.logo_ibermatica.TabIndex = 8;
             this.logo_ibermatica.TabStop = false;
             // 
