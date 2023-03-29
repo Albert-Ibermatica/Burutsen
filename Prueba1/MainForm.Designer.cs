@@ -34,27 +34,28 @@
             this.btn_historial = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.texto_resultado = new System.Windows.Forms.Label();
-            this.logo_ibermatica = new System.Windows.Forms.PictureBox();
-            this.icono_informacion = new System.Windows.Forms.PictureBox();
-            this.imagen_resultado = new System.Windows.Forms.PictureBox();
             this.barra_superior = new System.Windows.Forms.Panel();
             this.label_fecha = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label_estado = new System.Windows.Forms.Label();
-            this.icono_reiniciar = new System.Windows.Forms.PictureBox();
             this.link_manual = new System.Windows.Forms.LinkLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.logo_ibermatica)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.icono_informacion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imagen_resultado)).BeginInit();
+            this.icono_reiniciar = new System.Windows.Forms.PictureBox();
+            this.imagen_resultado = new System.Windows.Forms.PictureBox();
+            this.icono_informacion = new System.Windows.Forms.PictureBox();
+            this.logo_ibermatica = new System.Windows.Forms.PictureBox();
             this.barra_superior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.icono_reiniciar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagen_resultado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icono_informacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo_ibermatica)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_iniciar_prediccion
             // 
             this.btn_iniciar_prediccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(121)))), ((int)(((byte)(221)))));
             this.btn_iniciar_prediccion.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_iniciar_prediccion.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_iniciar_prediccion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btn_iniciar_prediccion.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_iniciar_prediccion.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btn_iniciar_prediccion.Location = new System.Drawing.Point(330, 592);
             this.btn_iniciar_prediccion.Margin = new System.Windows.Forms.Padding(4);
@@ -81,8 +82,10 @@
             // btn_historial
             // 
             this.btn_historial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(121)))), ((int)(((byte)(221)))));
+            this.btn_historial.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_historial.FlatAppearance.BorderSize = 0;
-            this.btn_historial.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_historial.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btn_historial.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_historial.ForeColor = System.Drawing.Color.White;
             this.btn_historial.Location = new System.Drawing.Point(623, 592);
             this.btn_historial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -115,38 +118,6 @@
             this.texto_resultado.TabIndex = 7;
             this.texto_resultado.Text = "Alimento:      --";
             this.texto_resultado.Click += new System.EventHandler(this.texto_resultado_Click);
-            // 
-            // logo_ibermatica
-            // 
-            this.logo_ibermatica.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logo_ibermatica.BackgroundImage")));
-            this.logo_ibermatica.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.logo_ibermatica.Cursor = System.Windows.Forms.Cursors.SizeNS;
-            this.logo_ibermatica.InitialImage = ((System.Drawing.Image)(resources.GetObject("logo_ibermatica.InitialImage")));
-            this.logo_ibermatica.Location = new System.Drawing.Point(951, 653);
-            this.logo_ibermatica.Name = "logo_ibermatica";
-            this.logo_ibermatica.Size = new System.Drawing.Size(236, 63);
-            this.logo_ibermatica.TabIndex = 8;
-            this.logo_ibermatica.TabStop = false;
-            // 
-            // icono_informacion
-            // 
-            this.icono_informacion.Image = ((System.Drawing.Image)(resources.GetObject("icono_informacion.Image")));
-            this.icono_informacion.Location = new System.Drawing.Point(12, 674);
-            this.icono_informacion.Name = "icono_informacion";
-            this.icono_informacion.Size = new System.Drawing.Size(42, 42);
-            this.icono_informacion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.icono_informacion.TabIndex = 9;
-            this.icono_informacion.TabStop = false;
-            // 
-            // imagen_resultado
-            // 
-            this.imagen_resultado.Image = ((System.Drawing.Image)(resources.GetObject("imagen_resultado.Image")));
-            this.imagen_resultado.Location = new System.Drawing.Point(475, 243);
-            this.imagen_resultado.Name = "imagen_resultado";
-            this.imagen_resultado.Size = new System.Drawing.Size(244, 184);
-            this.imagen_resultado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.imagen_resultado.TabIndex = 10;
-            this.imagen_resultado.TabStop = false;
             // 
             // barra_superior
             // 
@@ -198,15 +169,6 @@
             this.label_estado.Text = "ESTADO: DESCONECTADO";
             this.label_estado.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // icono_reiniciar
-            // 
-            this.icono_reiniciar.Image = ((System.Drawing.Image)(resources.GetObject("icono_reiniciar.Image")));
-            this.icono_reiniciar.Location = new System.Drawing.Point(12, 10);
-            this.icono_reiniciar.Name = "icono_reiniciar";
-            this.icono_reiniciar.Size = new System.Drawing.Size(42, 39);
-            this.icono_reiniciar.TabIndex = 10;
-            this.icono_reiniciar.TabStop = false;
-            // 
             // link_manual
             // 
             this.link_manual.AutoSize = true;
@@ -218,6 +180,47 @@
             this.link_manual.TabIndex = 17;
             this.link_manual.TabStop = true;
             this.link_manual.Text = "Ver manual";
+            // 
+            // icono_reiniciar
+            // 
+            this.icono_reiniciar.Image = ((System.Drawing.Image)(resources.GetObject("icono_reiniciar.Image")));
+            this.icono_reiniciar.Location = new System.Drawing.Point(12, 7);
+            this.icono_reiniciar.Name = "icono_reiniciar";
+            this.icono_reiniciar.Size = new System.Drawing.Size(42, 39);
+            this.icono_reiniciar.TabIndex = 10;
+            this.icono_reiniciar.TabStop = false;
+            // 
+            // imagen_resultado
+            // 
+            this.imagen_resultado.Image = ((System.Drawing.Image)(resources.GetObject("imagen_resultado.Image")));
+            this.imagen_resultado.Location = new System.Drawing.Point(475, 243);
+            this.imagen_resultado.Name = "imagen_resultado";
+            this.imagen_resultado.Size = new System.Drawing.Size(244, 184);
+            this.imagen_resultado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.imagen_resultado.TabIndex = 10;
+            this.imagen_resultado.TabStop = false;
+            // 
+            // icono_informacion
+            // 
+            this.icono_informacion.Image = ((System.Drawing.Image)(resources.GetObject("icono_informacion.Image")));
+            this.icono_informacion.Location = new System.Drawing.Point(12, 674);
+            this.icono_informacion.Name = "icono_informacion";
+            this.icono_informacion.Size = new System.Drawing.Size(42, 42);
+            this.icono_informacion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.icono_informacion.TabIndex = 9;
+            this.icono_informacion.TabStop = false;
+            // 
+            // logo_ibermatica
+            // 
+            this.logo_ibermatica.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logo_ibermatica.BackgroundImage")));
+            this.logo_ibermatica.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.logo_ibermatica.Cursor = System.Windows.Forms.Cursors.SizeNS;
+            this.logo_ibermatica.InitialImage = ((System.Drawing.Image)(resources.GetObject("logo_ibermatica.InitialImage")));
+            this.logo_ibermatica.Location = new System.Drawing.Point(951, 653);
+            this.logo_ibermatica.Name = "logo_ibermatica";
+            this.logo_ibermatica.Size = new System.Drawing.Size(236, 63);
+            this.logo_ibermatica.TabIndex = 8;
+            this.logo_ibermatica.TabStop = false;
             // 
             // MainForm
             // 
@@ -242,12 +245,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Burutsen";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.logo_ibermatica)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.icono_informacion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imagen_resultado)).EndInit();
             this.barra_superior.ResumeLayout(false);
             this.barra_superior.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.icono_reiniciar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagen_resultado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icono_informacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo_ibermatica)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

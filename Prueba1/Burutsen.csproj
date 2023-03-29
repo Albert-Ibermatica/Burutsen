@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{12345C91-CE14-4F81-8E8B-42925F36F4D6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Prueba1</RootNamespace>
-    <AssemblyName>Prueba1</AssemblyName>
+    <RootNamespace>Burutsen</RootNamespace>
+    <AssemblyName>Burutsen</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -156,6 +156,7 @@
     <Content Include="icons\icone-cercle-rempli-vert.png" />
     <Content Include="icons\informacion.png" />
     <None Include="icons\logo-ayesa.png" />
+    <Content Include="icons\information-circle-outline.png" />
     <Content Include="icons\logo-ibermatica.png" />
     <Content Include="icons\manteca-de-cacahuete %281%29.png" />
     <Content Include="icons\manteca-de-cacahuete.png" />
@@ -165,6 +166,7 @@
     <Content Include="icons\recarga-de-flecha-blanca %281%29.png" />
     <Content Include="icons\recarga-de-flecha-blanca %282%29.png" />
     <Content Include="icons\recarga-de-flecha-blanca.png" />
+    <Content Include="icons\refresh-outline.png" />
     <Content Include="icons\simbolo-matematico-conjunto-vacio.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
